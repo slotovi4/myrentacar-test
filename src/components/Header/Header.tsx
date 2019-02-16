@@ -38,7 +38,7 @@ class Header extends React.Component {
               <li className={header("Link")}>журнал о чехии</li>
             </ul>
 
-            <div className={header("Rigth")}>
+            <div className={header("Rigth", { activeArrow: currencyListOpen })}>
               <span
                 className={header("Eng")}
                 onClick={() =>
