@@ -1,0 +1,313 @@
+.Header {
+  background: linear-gradient(
+      0deg,
+      rgba(30, 42, 53, 0.8),
+      rgba(30, 42, 53, 0.8)
+    ),
+    url("Header-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 377px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.Header-Container {
+  max-width: 895px;
+  margin: 0 auto;
+  height: 100%;
+  padding-bottom: 32px;
+}
+
+.Header-Top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header-Menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Header-Link {
+  display: inline-block;
+  color: white;
+  font-size: 0.784em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 41px;
+  line-height: 3.5em;
+  opacity: 0.6;
+  transition: all 0.3s ease-out;
+}
+
+.Header-Link:hover {
+  opacity: 1;
+}
+
+.Header-Link:last-child {
+  margin-right: 0;
+}
+
+.Header-Link_active {
+  border-bottom: 2px solid white;
+  opacity: 1;
+}
+
+.Header-Eng {
+  font-size: 0.857em;
+  display: inline-block;
+  color: white;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.Header-Currency {
+  padding: 10px 23px 10px 10px;
+  position: relative;
+  cursor: pointer;
+  color: white;
+  font-size: 0.785em;
+  font-weight: 600;
+  list-style: none;
+  margin: 0;
+  transition: all 0.3s ease-out;
+}
+
+.Header-CurrencyOption {
+  opacity: 0;
+}
+
+.Header-CurrencyOption:after {
+  position: absolute;
+  height: 20px;
+  width: 10px;
+  right: 10px;
+  text-align: center;
+  color: #999ea7;
+  transition: all 0.3s ease-out;
+}
+
+.Header-CurrencyOption:hover {
+  color: #27c79a;
+}
+
+.Header-CurrencyOption:hover:after {
+  color: #1e2a35;
+}
+
+.Header-CurrencyOption_type_rub:after {
+  content: "₽";
+}
+
+.Header-CurrencyOption_type_eur:after {
+  content: "€";
+}
+
+.Header-CurrencyOption_type_usd:after {
+  content: "$";
+}
+
+.Header-CurrencyOption_color_dark {
+  color: #1e2a35;
+}
+
+.Header-CurrencyOption_hidden {
+  display: none;
+}
+
+.Header-CurrencyOption_sellected {
+  display: block;
+  opacity: 1;
+}
+
+.Header-CurrencyOption_sellected:hover {
+  color: white;
+}
+
+.Header-CurrencyList {
+  list-style: none;
+  margin-top: 10px;
+  left: 0;
+  padding: 15px 25px 15px 15px;
+  position: absolute;
+  visibility: hidden;
+  background: white;
+  border-radius: 2px;
+}
+
+.Header-CurrencyList_opened {
+  visibility: visible;
+}
+
+.Header-CurrencyList_opened .Header-CurrencyOption {
+  opacity: 1;
+}
+
+.Header-Rigth {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 670px);
+}
+
+.Header-Rigth:after {
+  content: "";
+  position: absolute;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #b3b7bb;
+  top: 50%;
+  margin-top: -2px;
+  right: 0;
+  z-index: 1;
+}
+
+.Header-Content {
+  display: flex;
+  margin-top: 25px;
+  height: calc(100% - 40px - 25px);
+  justify-content: space-between;
+}
+
+.Header-LeftContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 670px;
+}
+
+.Header-RightContent {
+  width: calc(100% - 670px);
+}
+
+.Header-Name {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.715em;
+  color: white;
+  margin: 0;
+}
+
+.Header-PreInfo {
+  max-width: 260px;
+  display: inline-block;
+  line-height: 1.43em;
+  font-size: 0.857em;
+  font-weight: 100;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.Header-Title {
+  font-weight: 900;
+  margin: 0;
+  color: white;
+  font-size: 4.57em;
+  margin-bottom: 25px;
+}
+
+.Header-AutoNum {
+  font-size: 1em;
+  color: white;
+  font-weight: 100;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+.Header-Comments {
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.15em;
+  line-height: 1.715em;
+  position: relative;
+  margin: 5px 0;
+}
+
+.Header-Comments:after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  background-image: url("./Header-heart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.Header-InfoLinks {
+  margin-top: 40px;
+}
+
+.Header-InfoLink {
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.785em;
+  padding: 4px 0 4px 30px;
+  font-weight: 600;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.Header-InfoLink::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 22px;
+  left: 0px;
+  opacity: 0.6;
+  transition: all 0.3s ease-out;
+  top: 0;
+}
+
+.Header-InfoLink:hover::after {
+  opacity: 1;
+}
+
+.Header-InfoLink_type_load {
+  opacity: 0.6;
+  transition: all 0.3s ease-out;
+  width: auto;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 0;
+}
+
+.Header-InfoLink_type_load:hover {
+  opacity: 1;
+}
+
+.Header-InfoLink_type_car:after {
+  background-image: url("./Header-car.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Header-InfoLink_type_map:after {
+  background-image: url("./Header-map.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Header-InfoLink_type_point:after {
+  background-image: url("./Header-point.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Header-InfoLink:last-child {
+  margin-bottom: 0;
+}

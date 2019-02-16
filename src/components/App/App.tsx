@@ -6,11 +6,11 @@ import { Provider } from "react-redux";
 import store from "../../store";
 
 // Components
-import First from "../First/First";
+import Header from "../Header/Header";
 
-const MainRoutes = () => (
+const MainPage = () => (
   <React.Fragment>
-    <First />
+    <span>123</span>
   </React.Fragment>
 );
 
@@ -18,9 +18,10 @@ class App extends React.Component {
   public render() {
     return (
       <Provider store={store}>
+        <Header />
         <Router>
           <Switch>
-            <Route exact={true} path="/" component={MainRoutes} />
+            <Route exact={true} path="/" component={MainPage} />
           </Switch>
         </Router>
       </Provider>
