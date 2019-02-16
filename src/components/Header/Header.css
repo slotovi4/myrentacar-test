@@ -83,6 +83,7 @@
 .Header-CurrencyOption {
   opacity: 0;
   padding-right: 15px;
+  margin-top: 10px;
 }
 
 .Header-CurrencyOption:after {
@@ -127,6 +128,7 @@
   display: block;
   opacity: 1;
   padding: 0;
+  margin: 0;
 }
 
 .Header-CurrencyOption_sellected:hover {
@@ -137,7 +139,7 @@
   list-style: none;
   margin-top: 10px;
   left: 0;
-  padding: 15px;
+  padding: 5px 15px 15px 15px;
   position: absolute;
   visibility: hidden;
   background: white;
