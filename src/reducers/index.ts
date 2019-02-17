@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import testReducer from "./testReducer";
+import autoListReducer from "./autoListReducer";
 
 export default combineReducers({
-  test: testReducer
+  autoList: autoListReducer
 });

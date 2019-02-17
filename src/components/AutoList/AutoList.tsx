@@ -1,10 +1,33 @@
 import * as React from "react";
 import { cn } from "@bem-react/classname";
+import { connect } from "react-redux";
+import {
+  getCarsData,
+  getAllCars,
+  getCompactCars,
+  getMiddleClassCars,
+  getLuxCars,
+  getSuvCars
+} from "../../actions/autoListActions";
 
 // styles
 import "./AutoList.css";
 
-class AutoList extends React.Component {
+interface IProps {
+  getCarsData: () => void;
+  getAllCars: () => void;
+  getCompactCars: () => void;
+  getMiddleClassCars: () => void;
+  getLuxCars: () => void;
+  getSuvCars: () => void;
+}
+
+class AutoList extends React.Component<IProps> {
+  public componentWillMount() {
+    this.props.getCarsData();
+    this.props.getAllCars();
+  }
+
   public render() {
     const list = cn("AutoList");
 
@@ -19,13 +42,36 @@ class AutoList extends React.Component {
 
         <div className={list("Section", { type: "filter" })}>
           <ul className={list("Filter")}>
-            <li className={list("Text", { type: "filter", sellected: true })}>
+            <li
+              className={list("Text", { type: "filter", sellected: true })}
+              onClick={this.props.getAllCars}
+            >
               Все
             </li>
-            <li className={list("Text", { type: "filter" })}>Компактные</li>
-            <li className={list("Text", { type: "filter" })}>Средний класс</li>
-            <li className={list("Text", { type: "filter" })}>Люкс</li>
-            <li className={list("Text", { type: "filter" })}>Внедорожники</li>
+            <li
+              className={list("Text", { type: "filter" })}
+              onClick={this.props.getCompactCars}
+            >
+              Компактные
+            </li>
+            <li
+              className={list("Text", { type: "filter" })}
+              onClick={this.props.getMiddleClassCars}
+            >
+              Средний класс
+            </li>
+            <li
+              className={list("Text", { type: "filter" })}
+              onClick={this.props.getLuxCars}
+            >
+              Люкс
+            </li>
+            <li
+              className={list("Text", { type: "filter" })}
+              onClick={this.props.getSuvCars}
+            >
+              Внедорожники
+            </li>
           </ul>
         </div>
 
@@ -56,4 +102,16 @@ class AutoList extends React.Component {
   }
 }
 
-export default AutoList;
+// проверка при клике если они загружены в пропс запрос не делать
+
+export default connect(
+  null,
+  {
+    getCarsData,
+    getAllCars,
+    getCompactCars,
+    getMiddleClassCars,
+    getLuxCars,
+    getSuvCars
+  }
+)(AutoList);
