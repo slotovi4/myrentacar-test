@@ -134,6 +134,26 @@ class Header extends React.Component {
               </div>
             </div>
           </div>
+
+          <div className={header("Filter")}>
+            <div className={header("FilterSection", { type: "left" })}>
+              <div className={header("City")}>
+                <span className={header("FilterText")}>
+                  Город получения и возврата
+                </span>
+                <span className={header("FilterTitle")}>Карловы Вары</span>
+              </div>
+              <div className={header("Rent")}>
+                <span className={header("FilterText")}>Даты аренды</span>
+                <span className={header("FilterTitle")}>
+                  28 фев. – 9 мар. · 10 дней
+                </span>
+              </div>
+            </div>
+            <div className={header("FilterSection", { type: "right" })}>
+              <span className={header("FilterTitle")}>Расширенные фильтры</span>
+            </div>
+          </div>
         </div>
       </section>
     );

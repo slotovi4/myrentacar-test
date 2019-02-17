@@ -16,7 +16,7 @@
   max-width: 895px;
   margin: 0 auto;
   height: 100%;
-  padding-bottom: 32px;
+  padding-bottom: 35px;
 }
 
 .Header-Top {
@@ -320,4 +320,83 @@
 
 .Header-InfoLink:last-child {
   margin-bottom: 0;
+}
+
+.Header-Filter {
+  height: 70px;
+}
+
+.Header-FilterSection {
+  background: linear-gradient(
+      0deg,
+      rgba(30, 42, 53, 0.1),
+      rgba(30, 42, 53, 0.1)
+    ),
+    #27c79a;
+  border-radius: 2px;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  padding: 15px;
+}
+
+.Header-FilterSection_type_left {
+  width: 595px;
+  display: flex;
+  position: relative;
+}
+
+.Header-FilterSection_type_left::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background: white;
+  opacity: 0.2;
+  left: 50%;
+  top: 0;
+}
+
+.Header-FilterSection_type_right {
+  width: calc(100% - 595px - 5px);
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.Header-FilterSection_type_right:after {
+  content: "";
+  position: absolute;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #a9e9d8;
+  top: 50%;
+  margin-top: -2px;
+  right: 15px;
+  transition: all 0.3s ease-out;
+}
+
+.Header-City {
+  width: 50%;
+}
+
+.Header-FilterText {
+  color: white;
+  opacity: 0.8;
+  font-weight: 100;
+  font-size: 0.857em;
+  line-height: 1.43em;
+  display: block;
+}
+
+.Header-FilterTitle {
+  color: white;
+  font-size: 1.15em;
+  line-height: 2.15em;
+}
+
+.Header-Rent {
+  width: 50%;
+  padding-left: 15px;
 }
