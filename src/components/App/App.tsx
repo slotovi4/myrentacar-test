@@ -7,10 +7,11 @@ import store from "../../store";
 
 // Components
 import Header from "../Header/Header";
+import AutoList from "../AutoList/AutoList";
 
 const MainPage = () => (
   <React.Fragment>
-    <span>123</span>
+    <AutoList />
   </React.Fragment>
 );
 
