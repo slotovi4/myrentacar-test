@@ -10,10 +10,21 @@ import {
   getSuvCars
 } from "../../actions/autoListActions";
 
+// interface
+import { ICar } from "../../actions/interface";
+
+// components
+import Car from "../Car/Car";
+
 // styles
 import "./AutoList.css";
 
 interface IProps {
+  allCars: ICar[] | null;
+  compactCars: ICar[] | null;
+  middleClassCars: ICar[] | null;
+  luxCars: ICar[] | null;
+  suvCars: ICar[] | null;
   getCarsData: () => void;
   getAllCars: () => void;
   getCompactCars: () => void;
@@ -23,13 +34,20 @@ interface IProps {
 }
 
 class AutoList extends React.Component<IProps> {
-  public componentWillMount() {
-    this.props.getCarsData();
-    this.props.getAllCars();
+  public state = {
+    cars: []
+  };
+
+  public async componentWillMount() {
+    await this.props.getCarsData();
+    await this.props.getAllCars();
+
+    this.setState({ cars: this.props.allCars });
   }
 
   public render() {
     const list = cn("AutoList");
+    const { cars } = this.state;
 
     return (
       <section className={list()}>
@@ -95,7 +113,7 @@ class AutoList extends React.Component<IProps> {
         </div>
 
         <div className={list("Section", { type: "cars" })}>
-          <span>123</span>
+          {cars && cars.map((car: ICar) => <Car key={car.id} car={car} />)}
         </div>
       </section>
     );
@@ -103,9 +121,16 @@ class AutoList extends React.Component<IProps> {
 }
 
 // проверка при клике если они загружены в пропс запрос не делать
+const mapStateToProps = (state: any) => ({
+  allCars: state.autoList.allCars,
+  compactCars: state.autoList.compactCars,
+  middleClassCars: state.autoList.middleClassCars,
+  luxCars: state.autoList.luxCars,
+  suvCars: state.autoList.suvCars
+});
 
 export default connect(
-  null,
+  mapStateToProps,
   {
     getCarsData,
     getAllCars,
